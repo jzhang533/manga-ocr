@@ -1,3 +1,13 @@
+
+- My Training Logs
+
+|   method   |  epoches   |  validation cer    |
+| ---- | ---- | ---- |
+|   only manga109s data, no pretraining weights(cold start), deit + bert (2 decoder layers)   | 100+     |   around 20%   |
+|   only manga109s data, with pretraining weights, deit + bert(2 decoder layers)  |  100+    |  around 13%    |
+|      |      |      |
+
+
 # Manga OCR
 
 Optical character recognition for Japanese text, with the main focus being Japanese manga.
