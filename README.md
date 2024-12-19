@@ -5,8 +5,11 @@
 | ---- | ---- | ---- |
 |   only manga109s data, no pretraining weights(cold start), deit + bert (2 decoder layers)   | 100+     |   around 20%   |
 |   only manga109s data, with pretraining weights, deit + bert(2 decoder layers)  |  100+    |  around 13%    |
-|      |      |      |
+|   only manga109s data, with pretraining weights, deit + bert(12 decoder layers) |  100+    |  around 13%    |
 
+- update to get_model: it's in my_get_model.py, more straightforward.
+- see Examples section for comparing my trained model and the model trained by original author
+- only using manga109s data is not enough, the dataset is too small, i.e., only 102253 data samples, I'll need to try using synthetic data.
 
 # Manga OCR
 
@@ -124,20 +127,20 @@ If `manga_ocr` doesn't work, you might also try replacing it with `python -m man
 
 Here are some cherry-picked examples showing the capability of the model. 
 
-| image                | Manga OCR result |
-|----------------------|------------------|
-| ![](assets/examples/00.jpg) | 素直にあやまるしか |
-| ![](assets/examples/01.jpg) | 立川で見た〝穴〟の下の巨大な眼は： |
-| ![](assets/examples/02.jpg) | 実戦剣術も一流です |
-| ![](assets/examples/03.jpg) | 第３０話重苦しい闇の奥で静かに呼吸づきながら |
-| ![](assets/examples/04.jpg) | よかったじゃないわよ！何逃げてるのよ！！早くあいつを退治してよ！ |
-| ![](assets/examples/05.jpg) | ぎゃっ |
-| ![](assets/examples/06.jpg) | ピンポーーン |
-| ![](assets/examples/07.jpg) | ＬＩＮＫ！私達７人の力でガノンの塔の結界をやぶります |
-| ![](assets/examples/08.jpg) | ファイアパンチ |
-| ![](assets/examples/09.jpg) | 少し黙っている |
-| ![](assets/examples/10.jpg) | わかるかな〜？ |
-| ![](assets/examples/11.jpg) | 警察にも先生にも町中の人達に！！ |
+| image                | Manga OCR result | My trained model result |
+|----------------------|------------------| ------------------| 
+| ![](assets/examples/00.jpg) | 素直にあやまるしか | 素直にあやまるしか | 
+| ![](assets/examples/01.jpg) | 立川で見た〝穴〟の下の巨大な眼は： | 立川で見た”穴の下の巨大な眼は．．．|
+| ![](assets/examples/02.jpg) | 実戦剣術も一流です | 実戦開催も一流です |
+| ![](assets/examples/03.jpg) | 第３０話重苦しい闇の奥で静かに呼吸づきながら | 韓国・金浦（キムポ｝空港（成功）管制塔副作用） |
+| ![](assets/examples/04.jpg) | よかったじゃないわよ！何逃げてるのよ！！早くあいつを退治してよ！ | よかったじゃないわよ！！何逃げてるのよ！？早くあいつを退治してよ！ |
+| ![](assets/examples/05.jpg) | ぎゃっ | ぎゃっ | 
+| ![](assets/examples/06.jpg) | ピンポーーン | ピンポーン | 
+| ![](assets/examples/07.jpg) | ＬＩＮＫ！私達７人の力でガノンの塔の結界をやぶります | ＬｅＴｏｕｒｄｅＦｒａｎｃｅがｔａｎｅ＇ｓＤａｙ。 | 
+| ![](assets/examples/08.jpg) | ファイアパンチ | ファイオアハハハチ | 
+| ![](assets/examples/09.jpg) | 少し黙っている | 少し黙っている | 
+| ![](assets/examples/10.jpg) | わかるかな〜？ | わかるかなー？ |
+| ![](assets/examples/11.jpg) | 警察にも先生にも町中の人達に！！ | 警察にも先生にも町中の人達に！ |
 
 # Contact
 For any inquiries, please feel free to contact me at kha-white@mail.com
