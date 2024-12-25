@@ -1,4 +1,4 @@
-import budou
+import budoux
 import numpy as np
 import pandas as pd
 
@@ -16,7 +16,7 @@ class SyntheticDataGenerator:
     def __init__(self):
         self.vocab, self.hiragana, self.katakana = get_charsets()
         self.len_to_p = pd.read_csv(ASSETS_PATH / "len_to_p.csv")
-        self.parser = budou.get_parser("tinysegmenter")
+        self.parser = budoux.load_default_japanese_parser()
         self.fonts_df, self.font_map = get_font_meta()
         self.font_labels, self.font_p = self.get_font_labels_prob()
         self.renderer = Renderer()
@@ -91,10 +91,10 @@ class SyntheticDataGenerator:
 
         words = []
         text_len = 0
-        for chunk in self.parser.parse(text)["chunks"]:
-            words.append(chunk.word)
-            text_len += len(chunk.word)
-            if text_len + len(chunk.word) >= max_text_len:
+        for word in self.parser.parse(text):
+            words.append(word)
+            text_len += len(word)
+            if text_len + len(word) >= max_text_len:
                 break
 
         return words

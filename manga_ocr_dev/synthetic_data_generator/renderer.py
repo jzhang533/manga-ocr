@@ -129,7 +129,7 @@ class Renderer:
             )
 
             t = [
-                A.ElasticTransform(alpha=alpha, sigma=sigma, alpha_affine=0, p=0.8),
+                A.ElasticTransform(alpha=alpha, sigma=sigma, p=0.8),
             ]
             bubble = A.Compose(t)(image=bubble)["image"]
 
