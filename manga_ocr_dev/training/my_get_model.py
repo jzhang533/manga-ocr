@@ -1,9 +1,6 @@
 from transformers import (
-    AutoConfig,
-    AutoModel,
     AutoTokenizer,
     AutoImageProcessor,
-    AutoModelForCausalLM,
     VisionEncoderDecoderModel,
 )
 
