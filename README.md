@@ -1,15 +1,19 @@
 
 - My Training Logs
+  - 2024-12-31, after several experiments, by using manga109s data + 1.5 million synthetic data, I could get a cer 0.1017, which is comparable to cer 0.1056 of original author's model.
 
 |   method   |  epoches   |  validation cer    |
 | ---- | ---- | ---- |
-|   only manga109s data, no pretraining weights(cold start), deit + bert (2 decoder layers)   | 100+     |   around 20%   |
-|   only manga109s data, with pretraining weights, deit + bert(2 decoder layers)  |  100+    |  around 13%    |
-|   only manga109s data, with pretraining weights, deit + bert(12 decoder layers) |  100+    |  around 13%    |
+|   only manga109s data, no pretraining weights(cold start), deit tiny + bert (2 decoder layers)   | 100+     |   around 20%   |
+|   only manga109s data, with pretraining weights, deit tiny + bert(2 decoder layers)  |  100+    |  around 13%    |
+|   only manga109s data, with pretraining weights, deit tiny + bert(12 decoder layers) |  100+    |  around 13%    |
+|   manga109s data + 1.5 million synthetic data, with pretraining weights, deit tiny + bert(2 decoder layers)  |  15+    |  around 10%    |
 
-- update to get_model: it's in my_get_model.py, more straightforward.
-- see Examples section for comparing my trained model and the model trained by original author
-- only using manga109s data is not enough, the dataset is too small, i.e., only 102253 data samples, I'll need to try using synthetic data.
+- Notes
+  - update to get_model: it's in my_get_model.py, more straightforward.
+  - see Examples section for comparing my trained model and the model trained by original author
+  - only using manga109s data is not enough, the dataset is too small, i.e., only 102253 data samples, I'll need to try using synthetic data.
+  - I have manually created a tiny dataset, using Jump manga 2025-3 episode, only 501 items, the cer is 0.1643 on this dataset, original author's cer is 0.1204, still need to check the reason.
 
 # Manga OCR
 
@@ -130,17 +134,17 @@ Here are some cherry-picked examples showing the capability of the model.
 | image                | Manga OCR result | My trained model result |
 |----------------------|------------------| ------------------| 
 | ![](assets/examples/00.jpg) | 素直にあやまるしか | 素直にあやまるしか | 
-| ![](assets/examples/01.jpg) | 立川で見た〝穴〟の下の巨大な眼は： | 立川で見た”穴の下の巨大な眼は．．．|
-| ![](assets/examples/02.jpg) | 実戦剣術も一流です | 実戦開催も一流です |
-| ![](assets/examples/03.jpg) | 第３０話重苦しい闇の奥で静かに呼吸づきながら | 韓国・金浦（キムポ｝空港（成功）管制塔副作用） |
-| ![](assets/examples/04.jpg) | よかったじゃないわよ！何逃げてるのよ！！早くあいつを退治してよ！ | よかったじゃないわよ！！何逃げてるのよ！？早くあいつを退治してよ！ |
+| ![](assets/examples/01.jpg) | 立川で見た〝穴〟の下の巨大な眼は： | 立川で見た”穴”の下の巨大な眼は．．．|
+| ![](assets/examples/02.jpg) | 実戦剣術も一流です | 実験剣術も一緒です |
+| ![](assets/examples/03.jpg) | 第３０話重苦しい闇の奥で静かに呼吸づきながら | ３０話重告しい闇の裏で静かに呼ぶつきましょうね |
+| ![](assets/examples/04.jpg) | よかったじゃないわよ！何逃げてるのよ！！早くあいつを退治してよ！ |  かったじゃないわよ！！何逃げてるのよ！？早くあいつを退治してよ！ |
 | ![](assets/examples/05.jpg) | ぎゃっ | ぎゃっ | 
-| ![](assets/examples/06.jpg) | ピンポーーン | ピンポーン | 
-| ![](assets/examples/07.jpg) | ＬＩＮＫ！私達７人の力でガノンの塔の結界をやぶります | ＬｅＴｏｕｒｄｅＦｒａｎｃｅがｔａｎｅ＇ｓＤａｙ。 | 
-| ![](assets/examples/08.jpg) | ファイアパンチ | ファイオアハハハチ | 
+| ![](assets/examples/06.jpg) | ピンポーーン | ピンポーーン| 
+| ![](assets/examples/07.jpg) | ＬＩＮＫ！私達７人の力でガノンの塔の結界をやぶります | ＬＩＮＫ！私達２人の方でカンジの皆の結界をやぶります | 
+| ![](assets/examples/08.jpg) | ファイアパンチ | ファイアパンチ | 
 | ![](assets/examples/09.jpg) | 少し黙っている | 少し黙っている | 
-| ![](assets/examples/10.jpg) | わかるかな〜？ | わかるかなー？ |
-| ![](assets/examples/11.jpg) | 警察にも先生にも町中の人達に！！ | 警察にも先生にも町中の人達に！ |
+| ![](assets/examples/10.jpg) | わかるかな〜？ | わかるかな～？ |
+| ![](assets/examples/11.jpg) | 警察にも先生にも町中の人達に！！ | 警察にも先生にも前中の人達に！！ |
 
 # Contact
 For any inquiries, please feel free to contact me at kha-white@mail.com
