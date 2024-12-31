@@ -136,8 +136,8 @@ Here are some cherry-picked examples showing the capability of the model.
 | ![](assets/examples/00.jpg) | 素直にあやまるしか | 素直にあやまるしか | 
 | ![](assets/examples/01.jpg) | 立川で見た〝穴〟の下の巨大な眼は： | 立川で見た”穴”の下の巨大な眼は．．．|
 | ![](assets/examples/02.jpg) | 実戦剣術も一流です | 実験剣術も一緒です |
-| ![](assets/examples/03.jpg) | 第３０話重苦しい闇の奥で静かに呼吸づきながら | ３０話重告しい闇の裏で静かに呼ぶつきましょうね |
-| ![](assets/examples/04.jpg) | よかったじゃないわよ！何逃げてるのよ！！早くあいつを退治してよ！ |  かったじゃないわよ！！何逃げてるのよ！？早くあいつを退治してよ！ |
+| ![](assets/examples/03.jpg) | 第３０話重苦しい闇の奥で静かに呼吸づきながら | 第３０話重告しい闇の裏で静かに呼ぶつきましょうね |
+| ![](assets/examples/04.jpg) | よかったじゃないわよ！何逃げてるのよ！！早くあいつを退治してよ！ |  よかったじゃないわよ！！何逃げてるのよ！？早くあいつを退治してよ！ |
 | ![](assets/examples/05.jpg) | ぎゃっ | ぎゃっ | 
 | ![](assets/examples/06.jpg) | ピンポーーン | ピンポーーン| 
 | ![](assets/examples/07.jpg) | ＬＩＮＫ！私達７人の力でガノンの塔の結界をやぶります | ＬＩＮＫ！私達２人の方でカンジの皆の結界をやぶります | 
